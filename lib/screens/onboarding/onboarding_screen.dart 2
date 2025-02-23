@@ -1,0 +1,73 @@
+import 'package:flutter/material.dart';
+import 'rescue_screen.dart'; 
+
+class OnboardingScreen extends StatelessWidget {
+  const OnboardingScreen({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: const Color(0xFFF7F3ED),
+      body: Center(
+        child: Padding(
+          padding: const EdgeInsets.all(24.0),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              const Text(
+                'Please select \n who are you',
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontSize: 28,
+                  fontWeight: FontWeight.bold,
+                  color: Color(0xFF9B5832),
+                ),
+              ),
+              const SizedBox(height: 40),
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => const RescueScreen()),
+                  );
+                },
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: const Color(0xFF5F6D45),
+                  padding: const EdgeInsets.symmetric(horizontal: 100, vertical: 20),
+                  minimumSize: const Size(250, 60),
+                ),
+                child: const Text(
+                  'User',
+                  style: TextStyle(fontSize: 22, color: Colors.white, fontWeight: FontWeight.bold),
+                ),
+              ),
+              const SizedBox(height: 25),
+              const Text(
+                'or',
+                style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold, color: Colors.black54),
+              ),
+              const SizedBox(height: 25),
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => const RescueScreen()),
+                  );
+                },
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: const Color(0xFFB2A379),
+                  padding: const EdgeInsets.symmetric(horizontal: 100, vertical: 20),
+                  minimumSize: const Size(250, 60),
+                ),
+                child: const Text(
+                  'Organization',
+                  style: TextStyle(fontSize: 22, color: Colors.white, fontWeight: FontWeight.bold),
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
